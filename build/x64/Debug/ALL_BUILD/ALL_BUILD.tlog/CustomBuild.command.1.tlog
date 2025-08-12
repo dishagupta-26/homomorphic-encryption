@@ -1,0 +1,10 @@
+^C:\USERS\DISHA GUPTA\DESKTOP\DISHA\FHE-FRAMEWORK\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Disha Gupta/Desktop/DISHA/fhe-framework" "-BC:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build" --check-stamp-file "C:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
