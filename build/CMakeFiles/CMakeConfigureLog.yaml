@@ -24,7 +24,7 @@ events:
       The output was:
       0
       MSBuild version 17.14.18+a338add32 for .NET Framework
-      Build started 13-08-2025 11:14:47.
+      Build started 13-08-2025 15:27:20.
       
       Project "C:\\Users\\Disha Gupta\\Desktop\\DISHA\\fhe-framework\\build\\CMakeFiles\\4.0.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -53,7 +53,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:01.33
+      Time Elapsed 00:00:02.49
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -72,8 +72,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build/CMakeFiles/CMakeScratch/TryCompile-2ox3aw"
-      binary: "C:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build/CMakeFiles/CMakeScratch/TryCompile-2ox3aw"
+      source: "C:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build/CMakeFiles/CMakeScratch/TryCompile-ij6sxo"
+      binary: "C:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build/CMakeFiles/CMakeScratch/TryCompile-ij6sxo"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -83,40 +83,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build/CMakeFiles/CMakeScratch/TryCompile-2ox3aw'
+        Change Dir: 'C:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build/CMakeFiles/CMakeScratch/TryCompile-ij6sxo'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a0141.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b6e09.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.18+a338add32 for .NET Framework
-        Build started 13-08-2025 11:14:50.
+        Build started 13-08-2025 15:27:23.
         
-        Project "C:\\Users\\Disha Gupta\\Desktop\\DISHA\\fhe-framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2ox3aw\\cmTC_a0141.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\Disha Gupta\\Desktop\\DISHA\\fhe-framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ij6sxo\\cmTC_b6e09.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_a0141.dir\\Debug\\".
+          Creating directory "cmTC_b6e09.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Disha Gupta\\Desktop\\DISHA\\fhe-framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2ox3aw\\Debug\\".
-          Creating directory "cmTC_a0141.dir\\Debug\\cmTC_a0141.tlog\\".
+          Creating directory "C:\\Users\\Disha Gupta\\Desktop\\DISHA\\fhe-framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ij6sxo\\Debug\\".
+          Creating directory "cmTC_b6e09.dir\\Debug\\cmTC_b6e09.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_a0141.dir\\Debug\\cmTC_a0141.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_a0141.dir\\Debug\\cmTC_a0141.tlog\\unsuccessfulbuild".
+          Creating "cmTC_b6e09.dir\\Debug\\cmTC_b6e09.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_b6e09.dir\\Debug\\cmTC_b6e09.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a0141.dir\\Debug\\\\" /Fd"cmTC_a0141.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b6e09.dir\\Debug\\\\" /Fd"cmTC_b6e09.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35214 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a0141.dir\\Debug\\\\" /Fd"cmTC_a0141.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b6e09.dir\\Debug\\\\" /Fd"cmTC_b6e09.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Disha Gupta\\Desktop\\DISHA\\fhe-framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2ox3aw\\Debug\\cmTC_a0141.exe" /INCREMENTAL /ILK:"cmTC_a0141.dir\\Debug\\cmTC_a0141.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build/CMakeFiles/CMakeScratch/TryCompile-2ox3aw/Debug/cmTC_a0141.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build/CMakeFiles/CMakeScratch/TryCompile-2ox3aw/Debug/cmTC_a0141.lib" /MACHINE:X64  /machine:x64 cmTC_a0141.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_a0141.vcxproj -> C:\\Users\\Disha Gupta\\Desktop\\DISHA\\fhe-framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2ox3aw\\Debug\\cmTC_a0141.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Disha Gupta\\Desktop\\DISHA\\fhe-framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ij6sxo\\Debug\\cmTC_b6e09.exe" /INCREMENTAL /ILK:"cmTC_b6e09.dir\\Debug\\cmTC_b6e09.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build/CMakeFiles/CMakeScratch/TryCompile-ij6sxo/Debug/cmTC_b6e09.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build/CMakeFiles/CMakeScratch/TryCompile-ij6sxo/Debug/cmTC_b6e09.lib" /MACHINE:X64  /machine:x64 cmTC_b6e09.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_b6e09.vcxproj -> C:\\Users\\Disha Gupta\\Desktop\\DISHA\\fhe-framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ij6sxo\\Debug\\cmTC_b6e09.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_a0141.dir\\Debug\\cmTC_a0141.tlog\\unsuccessfulbuild".
-          Touching "cmTC_a0141.dir\\Debug\\cmTC_a0141.tlog\\cmTC_a0141.lastbuildstate".
-        Done Building Project "C:\\Users\\Disha Gupta\\Desktop\\DISHA\\fhe-framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2ox3aw\\cmTC_a0141.vcxproj" (default targets).
+          Deleting file "cmTC_b6e09.dir\\Debug\\cmTC_b6e09.tlog\\unsuccessfulbuild".
+          Touching "cmTC_b6e09.dir\\Debug\\cmTC_b6e09.tlog\\cmTC_b6e09.lastbuildstate".
+        Done Building Project "C:\\Users\\Disha Gupta\\Desktop\\DISHA\\fhe-framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ij6sxo\\cmTC_b6e09.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:01.31
+        Time Elapsed 00:00:01.65
         
       exitCode: 0
   -
