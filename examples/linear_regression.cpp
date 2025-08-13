@@ -1,35 +1,34 @@
 #include <iostream>
+#include <vector>
+#include "scheme/params.h"
 #include "math/polynomial.h"
+#include "math/ntt.h"
 
 int main() {
-    std::cout << "--- FHE Framework Test ---" << std::endl;
+    std::cout << "--- FHE Framework: NTT Bit-Reversal Test ---" << std::endl;
 
-    // Create two simple polynomials for our tests
-    // p1 = 2x + 3
-    Polynomial p1(1);
-    p1.coefficients = {3, 2};
-    std::cout << "p1 = " << p1.to_string() << std::endl;
+    Parameters params;
+    params.poly_modulus_degree = 8;  // N
+    params.ciphertext_modulus = 17; // q
 
-    // p2 = 4x + 5
-    Polynomial p2(1);
-    p2.coefficients = {5, 4};
-    std::cout << "p2 = " << p2.to_string() << std::endl;
-    std::cout << "--------------------------------" << std::endl;
+    // Create a sample polynomial with coefficients 0, 1, 2, ..., 7
+    Polynomial p(params.poly_modulus_degree - 1);
+    for (size_t i = 0; i < params.poly_modulus_degree; ++i) {
+        p.coefficients[i] = i;
+    }
 
+    std::cout << "Original coefficients:     ";
+    for(uint64_t coeff : p.coefficients) { std::cout << coeff << " "; }
+    std::cout << std::endl;
 
-    // --- Test 1: Addition ---
-    std::cout << "\nTesting Addition..." << std::endl;
-    Polynomial sum = p1.add(p2); // (2x+3) + (4x+5) = 6x + 8
-    std::cout << "p1 + p2 = " << sum.to_string() << std::endl;
-    std::cout << "Expected:  6x^1 + 8x^0" << std::endl;
+    // Apply the forward NTT (which currently only does bit-reversal)
+    NTT::forward(p, params);
 
-
-    // --- Test 2: Multiplication ---
-    std::cout << "\nTesting Multiplication..." << std::endl;
-    Polynomial product = p1.multiply(p2); // (2x+3)*(4x+5) = 8x^2 + 22x + 15
-    std::cout << "p1 * p2 = " << product.to_string() << std::endl;
-    std::cout << "Expected:  8x^2 + 22x^1 + 15x^0" << std::endl;
-
+    std::cout << "After bit-reversal:      ";
+    for(uint64_t coeff : p.coefficients) { std::cout << coeff << " "; }
+    std::cout << std::endl;
+    
+    std::cout << "Expected order for N=8:  0 4 2 6 1 5 3 7" << std::endl;
 
     std::cout << "\n--- Test Complete ---" << std::endl;
     return 0;
