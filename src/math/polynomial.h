@@ -3,6 +3,8 @@
 #include <vector>   // We need this to use std::vector for our coefficients
 #include <cstdint>  // We need this for fixed-size integers like uint64_t
 #include <string>   // We need this for a helper function to print the polynomial
+#include "scheme/params.h"
+
 
 class Polynomial {
 public:
@@ -32,6 +34,6 @@ public:
     // Adds another polynomial to this one and returns the result.
     Polynomial add(const Polynomial& other) const;
 
-    // Multiplies another polynomial with this one and returns the result.
-    Polynomial multiply(const Polynomial& other) const;
+    // Modify the declaration of the multiply function to accept Parameters
+    Polynomial multiply(const Polynomial& other, const Parameters& params) const;
 };

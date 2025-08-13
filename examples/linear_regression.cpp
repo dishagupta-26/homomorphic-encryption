@@ -2,45 +2,33 @@
 #include <vector>
 #include "scheme/params.h"
 #include "math/polynomial.h"
-#include "math/ntt.h"
-
-// Helper function to print a vector of coefficients
-void print_poly(const std::string& label, const std::vector<uint64_t>& poly_coeffs) {
-    std::cout << label;
-    for(uint64_t coeff : poly_coeffs) { std::cout << coeff << " "; }
-    std::cout << std::endl;
-}
 
 int main() {
-    std::cout << "--- FHE Framework: NTT Round-Trip Test ---" << std::endl;
+    std::cout << "--- FHE Framework: NTT-based Multiplication Test ---" << std::endl;
 
     Parameters params;
-    params.poly_modulus_degree = 8;  // N
-    params.ciphertext_modulus = 17; // q
+    params.poly_modulus_degree = 8;
+    params.ciphertext_modulus = 17;
 
-    // Create a sample polynomial
-    Polynomial p(params.poly_modulus_degree - 1);
-    p.coefficients = {1, 2, 3, 4, 5, 0, 0, 0};
+    // p1 = 2x + 3
+    Polynomial p1(1);
+    p1.coefficients = {3, 2};
+    std::cout << "p1 = " << p1.to_string() << std::endl;
+
+    // p2 = 4x + 5
+    Polynomial p2(1);
+    p2.coefficients = {5, 4};
+    std::cout << "p2 = " << p2.to_string() << std::endl;
+    std::cout << "--------------------------------" << std::endl;
+
+    // Multiply p1 and p2 using our new NTT-based method
+    Polynomial product = p1.multiply(p2, params);
+
+    // Schoolbook result: (2x+3)*(4x+5) = 8x^2 + 10x + 12x + 15 = 8x^2 + 22x + 15
+    // Modulo 17, this becomes: 8x^2 + 5x + 15
+    std::cout << "NTT-based product: " << product.to_string() << std::endl;
+    std::cout << "Expected result:   8x^2 + 5x^1 + 15x^0" << std::endl;
     
-    // Save a copy of the original coefficients to compare against later
-    std::vector<uint64_t> original_coeffs = p.coefficients;
-    print_poly("Original poly:      ", original_coeffs);
-
-    // 1. Apply the forward NTT
-    NTT::forward(p, params);
-    print_poly("After forward NTT:  ", p.coefficients);
-
-    // 2. Apply the inverse NTT
-    NTT::inverse(p, params);
-    print_poly("After inverse NTT:  ", p.coefficients);
-
-    // 3. Verify the result
-    if (p.coefficients == original_coeffs) {
-        std::cout << "\nSUCCESS: The INTT correctly recovered the original polynomial." << std::endl;
-    } else {
-        std::cout << "\nFAILURE: The INTT did not recover the original polynomial." << std::endl;
-    }
-
     std::cout << "\n--- Test Complete ---" << std::endl;
     return 0;
 }

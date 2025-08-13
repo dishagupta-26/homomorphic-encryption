@@ -1,5 +1,6 @@
 #include "math/polynomial.h" // We must include the header file to implement its functions
 #include <algorithm>         // Required for std::max
+#include "math/ntt.h"
 
 // Implementation of the default constructor
 Polynomial::Polynomial() {
@@ -78,29 +79,25 @@ Polynomial Polynomial::add(const Polynomial& other) const {
     return result;
 }
 
-Polynomial Polynomial::multiply(const Polynomial& other) const {
-    // The degree of the result is the sum of the degrees of the input polynomials.
-    size_t this_degree = this->degree();
-    size_t other_degree = other.degree();
-    size_t result_degree = this_degree + other_degree;
+Polynomial Polynomial::multiply(const Polynomial& other, const Parameters& params) const {
+    // Create copies of the input polynomials to work with.
+    Polynomial p1 = *this;
+    Polynomial p2 = other;
 
-    // Create the result polynomial, initialized with all zero coefficients.
-    Polynomial result(result_degree);
+    // 1. Transform both polynomials into NTT (point-value) form.
+    NTT::forward(p1, params);
+    NTT::forward(p2, params);
 
-    // This is the "schoolbook" multiplication algorithm.
-    // For each term in the first polynomial ("this")...
-    for (size_t i = 0; i < this->coefficients.size(); ++i) {
-        // ...multiply it by each term in the second polynomial ("other").
-        for (size_t j = 0; j < other.coefficients.size(); ++j) {
-            // The new coefficient is the product of the two coefficients.
-            // The new term's degree is the sum of the individual degrees (i + j).
-            result.coefficients[i + j] += this->coefficients[i] * other.coefficients[j];
-        }
+    // 2. Create a result polynomial.
+    Polynomial result(params.poly_modulus_degree - 1);
+
+    // 3. Perform fast point-wise multiplication in the NTT domain.
+    for (size_t i = 0; i < params.poly_modulus_degree; ++i) {
+        result.coefficients[i] = (p1.coefficients[i] * p2.coefficients[i]) % params.ciphertext_modulus;
     }
 
-    // NOTE for the future: This O(n^2) function is the slow part of FHE.
-    // We will later replace it with a much faster O(n*log(n)) version using
-    // the Number Theoretic Transform (NTT).
+    // 4. Transform the result back from NTT form to standard coefficient form.
+    NTT::inverse(result, params);
 
     return result;
 }
