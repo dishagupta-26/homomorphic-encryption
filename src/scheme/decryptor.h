@@ -12,6 +12,9 @@ public:
     // This function decrypts a ciphertext back into a plaintext polynomial.
     void decrypt(const Ciphertext& ciphertext, Polynomial& plain_poly);
 
+    // This function decrypts a vector of ciphertexts back into a plaintext polynomial.
+    void decrypt_multiplied(const std::vector<Polynomial>& ciphertext, Polynomial& plain_poly);
+
 private:
     const Parameters& params;
     const SecretKey& secret_key;
