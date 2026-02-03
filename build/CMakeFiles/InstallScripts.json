@@ -1,9 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"C:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build/cmake_install.cmake",
-		"C:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build/src/cmake_install.cmake",
-		"C:/Users/Disha Gupta/Desktop/DISHA/fhe-framework/build/examples/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
